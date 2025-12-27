@@ -1,0 +1,29 @@
+# Dependencias
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Variables de entorno
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Coverage / testing
+coverage/
+
+# Build (por si después agregás algo)
+dist/
+build/
+
+# Ngrok (config local si lo usás)
+.ngrok2/
