@@ -1,6 +1,5 @@
 {
-	"futbol": [
-		"Jabibi",
+	"futbol": ["Francella","Bubaz", "El gordo lanata", "La cobra", "Chuky señores", "Pitotito33", "Nico Barth", "Miqueas Zannazi prime", "Horacio Pagani", "Scabobi", "Benito Mussolini", "Ponzio", "El pibe con el que debutó Pele", "Pollo Vignolo", "Augusto Justo", "Luquitas Rodríguez", "Sapardo", "Colapinto 43", "Gabriel Barbosa", "James Vardy", "Krupoviesa", "Maravilla Martínez", "El pibe Mastansuono", "Andrés Dukatenzeiler (Duka), "El pibe Janson", "Wanchope Abila", "Chicharito", "Kranevitter", "Pipe Loyola", "Martín Liberman", "Jabibi",
 		"Lucas Benitez",
 		"Faustino Justel",
 		"Diego Latorre",
@@ -23,11 +22,6 @@
 		"Neymar",
 		"Kylian Mbappé",
 		"Erling Haaland",
-		"Luka Modric",
-		"Kevin De Bruyne",
-		"Mohamed Salah",
-		"Harry Kane",
-		"Robert Lewandowski",
 
 		"Ángel Di María",
 		"Paulo Dybala",
@@ -63,52 +57,15 @@
 		"N'Golo Kanté",
 		"Ousmane Dembélé",
 
-		"Son",
-		"Takefusa Kubo",
-		"Hirving Lozano",
-		"Keylor Navas",
-		"Christian Pulisic",
-
-		"James Rodríguez",
-		"Juan Cuadrado",
-		"Radamel Falcao",
-		"Yerry Mina",
-
-		"Achraf Hakimi",
-		"Hakim Ziyech",
-
 		"Ivan Rakitić",
 		"Josko Gvardiol",
 		"Marcelo Brozović",
-		"Dominik Szoboszlai",
-
-		"Santi Cazorla",
-		"Isco",
-		"Dani Parejo",
-		"Iago Aspas",
 
 		"Leandro Paredes",
 		"Nicolás Otamendi",
 		"Marcos Acuña",
 		"Germán Pezzella",
 
-		"Papu Gómez",
-		"Lucas Ocampos",
-		"Nahuel Molina",
-
-		"Yann Sommer",
-		"Granit Xhaka",
-
-		"Pedro",
-		"Jesús Navas",
-		"Ferran Torres",
-
-		"Ángel Correa",
-		"Ever Banega",
-		"Fernando Gago",
-
-		"Sergio Romero",
-		"Walter Samuel",
-		"Hernán Crespo"
+		"Papu Gómez"
 	]
 }
