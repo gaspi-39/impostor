@@ -10,14 +10,14 @@ export const ImpostorService = {
 	create(cantidad) {
 		let jugadores = []
 		const data = this.read()
-		const indice = this.randomInt(0, data.futbol.length)
+		const indice = this.randomInt(data.futbol.length)
 
 		for (let i = 0; i < cantidad; i++) {
 			const jugador = this.createplayers(indice)
 			jugadores.push(jugador)
 		}
 		const partida = new Partida(jugadores)
-		const impostor = this.randomInt(0, jugadores.length - 1)
+		const impostor = this.randomInt(jugadores.length)
 		partida.jugadores[impostor].rol = "impostor"
 		console.log(partida.jugadores)
 		partidaActual = partida
@@ -45,17 +45,7 @@ export const ImpostorService = {
 			return
 		}
 	},
-	randomInt(min, max) {
-		return Math.floor(Math.random() * (max - min + 1)) + min
+	randomInt(max) {
+		return Math.floor(Math.random() * max)
 	},
-}
-
-export function leerDatos() {
-	try {
-		const data = fs.readFileSync(filepath, "utf-8")
-		return JSON.parse(data)
-	} catch (error) {
-		console.error("No se encontro datos", error)
-		return { libros: [], clientes: [], prestamos: [] }
-	}
 }

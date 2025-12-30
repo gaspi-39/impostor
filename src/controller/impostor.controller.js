@@ -1,6 +1,4 @@
-import { Partida } from "../models/partida.model.js"
 import { ImpostorService } from "../service/impostor.service.js"
-import { partidaActual } from "../service/impostor.service.js"
 
 export const ImpostorController = {
 	create(req, res) {
@@ -12,8 +10,11 @@ export const ImpostorController = {
 
 		const partida = ImpostorService.create(numero)
 		const tokens = partida.jugadores.map((j) => j.id)
+		const links = tokens.map(
+			(t) => `https://api-impostor-game.onrender.com/impostor/${t}`
+		)
 
-		res.send(tokens)
+		res.send(links)
 	},
 	showRol(req, res) {
 		const { id } = req.params
@@ -53,7 +54,7 @@ export const ImpostorController = {
         <h1>Tu rol es</h1>
         <div class="rol">${rol}</div>
         <p style="margin-top:20px; opacity:0.6">
-          No muestres esta pantalla 👀
+          No muestres esta pantalla wachin 👀
         </p>
       </div>
     </body>
