@@ -10,55 +10,15 @@ export const ImpostorController = {
 
 		const partida = ImpostorService.create(numero)
 		const tokens = partida.jugadores.map((j) => j.id)
-		const links = tokens.map(
-			(t) => `https://api-impostor-game.onrender.com/impostor/${t}`
-		)
+		// const links = tokens.map(
+		// 	(t) => `https://api-impostor-game.onrender.com/impostor/${t}`,
+		// )
 
-		res.send(links)
+		res.send(tokens)
 	},
 	showRol(req, res) {
 		const { id } = req.params
 		const rol = ImpostorService.showRol(id)
-		res.send(`
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-      <meta charset="UTF-8" />
-      <title>Tu rol</title>
-      <style>
-        body {
-          font-family: Arial, sans-serif;
-          background: #111;
-          color: #fff;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-        }
-        .card {
-          background: #222;
-          padding: 40px;
-          border-radius: 12px;
-          text-align: center;
-          box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        }
-        .rol {
-          font-size: 2.5rem;
-          margin-top: 20px;
-          color: ${rol === "impostor" ? "#ff4d4d" : "#4dff88"};
-        }
-      </style>
-    </head>
-    <body>
-      <div class="card">
-        <h1>Tu rol es</h1>
-        <div class="rol">${rol}</div>
-        <p style="margin-top:20px; opacity:0.6">
-          No muestres esta pantalla wachin 👀
-        </p>
-      </div>
-    </body>
-    </html>
-  `)
+		res.send({ rol: rol })
 	},
 }
