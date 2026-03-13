@@ -12,6 +12,9 @@ export default class GameHandler {
 		this.socket.on("crear_sala", (datos) => this.crearSala(datos))
 		this.socket.on("unirse_sala", (datos) => this.unirseSala(datos))
 		this.socket.on("empezar_juego", () => this.empezarJuego())
+		this.socket.on("reiniciar_juego", () => this.empezarJuego())
+		this.socket.on("disconnect", () => this.limpiarJugador())
+		this.socket.on("abandonar_sala", () => this.limpiarJugador())
 	}
 
 	crearSala(datos) {
@@ -53,6 +56,7 @@ export default class GameHandler {
 	empezarJuego() {
 		const salasJugador = Array.from(this.socket.rooms) // devuelve un set con la id y la sala en la que está
 		const codigoSala = salasJugador.find((sala) => sala !== this.socket.id)
+
 		if (this.socket.id === this.salas[codigoSala].host) {
 			this.salas[codigoSala].estado = "Juego"
 			let i = 0
@@ -73,6 +77,24 @@ export default class GameHandler {
 			this.socket.emit("error_sala", {
 				mensaje: "No autorizado, no tienes permisos o hay pocos jugadores",
 			})
+		}
+	}
+	reiniciarJuego() {
+		const salasJugador = Array.from(this.socket.rooms) // devuelve un set con la id y la sala en la que está
+		const codigoSala = salasJugador.find((sala) => sala !== this.socket.id)
+		this.salas[codigoSala].jugadores.forEach((j) => (j.rol = null))
+		this.empezarJuego()
+	}
+	limpiarJugador() {
+		const salasJugador = Array.from(this.socket.rooms) // devuelve un set con la id y la sala en la que está
+		if (salasJugador.length >= 1) {
+			const codigoSala = salasJugador.find((sala) => sala !== this.socket.id)
+			//
+			const nuevosJugadores = this.salas[codigoSala].jugadores.filter(
+				(j) => j.id !== this.socket.id,
+			) // no usar .map xq devuelve un arreglo del mismo tamaño, el que se elimina queda como "undefined"
+			this.salas[codigoSala].jugadores = nuevosJugadores
+			this.socket.leave(codigoSala)
 		}
 	}
 }

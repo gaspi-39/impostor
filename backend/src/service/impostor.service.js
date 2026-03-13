@@ -19,11 +19,12 @@ function randomInt(max) {
 }
 export function roles(cant) {
 	const { futbol } = read()
-	const jugador = futbol[randomInt(futbol.length - 1)]
+	const jugador = futbol[randomInt(futbol.length)]
 	const roles = []
 	for (let index = 0; index < cant; index++) {
 		roles.push(jugador)
 	}
-	roles[randomInt(roles.length - 1)] = "Impostor"
+	roles[randomInt(roles.length)] = "Impostor"
+	// console.log(roles)
 	return roles
 }

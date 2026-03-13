@@ -27,3 +27,9 @@ build/
 
 # Ngrok (config local si lo usás)
 .ngrok2/
+
+# Ignora node_modules en cualquier subcarpeta
+**/node_modules
+**/.env
+# Ignora los builds de React
+frontend/dist

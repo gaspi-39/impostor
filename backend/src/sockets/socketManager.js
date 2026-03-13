@@ -9,7 +9,7 @@ export default class SocketManager {
 
 	iniciarListeners() {
 		this.io.on("connection", (socket) => {
-			console.log(`✅ Jugador conectado: ${socket.id}`)
+			console.log(`Jugador conectado: ${socket.id}`)
 
 			// Por cada jugador que entra, le asignamos un "Controlador de Juego"
 			// Le pasamos io, el socket del jugador, y la referencia a las salas
