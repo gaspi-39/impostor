@@ -1,8 +1,8 @@
 import { Server } from "socket.io"
 import SocketManager from "./sockets/socketManager.js" // Importamos nuestro Gerente
-
-const io = new Server(3000, {
-	cors: { origin: "*" },
+const PORT = process.env.PORT || 3000
+const io = new Server(PORT, {
+	cors: { origin: process.env.FRONTEND_URL || "http://localhost:5173" },
 })
 
 const socketManager = new SocketManager(io)
