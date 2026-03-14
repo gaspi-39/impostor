@@ -11,4 +11,4 @@ process.on("uncaughtException", (error) => {
 	// Aquí podrías enviar un log a un servicio externo
 })
 
-console.log("Servidor iniciado en el puerto 3000")
+console.log(`Server running on ${PORT}`)
